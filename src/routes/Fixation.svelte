@@ -10,11 +10,11 @@
 
 <style>
 	h1 {
-		margin: auto;
 		text-align: center;
 		font-size: 90px;
 		height: 100%;
-		display: flex;
+		width: 100%;
+		margin: auto;
 		align-items: center;
 		justify-content: center;
 	}

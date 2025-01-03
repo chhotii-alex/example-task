@@ -242,8 +242,9 @@
 		margin: 0;
 		position: absolute;
 		top: 50%;
-		left: 50%;
-		-ms-transform: translate(-50%, -50%);
-		transform: translate(-50%, -50%);
+		left: 40%;
+		width: 60%;
+		transform: translate(-33%, -50%);
+		transform-box: context-box;
 	}
 </style>

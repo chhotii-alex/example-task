@@ -9,4 +9,8 @@
 <img src={state.picture} width="500" />
 
 <style>
+	img {
+		display: block;
+		margin: auto;
+	}
 </style>

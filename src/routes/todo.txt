@@ -1,4 +1,5 @@
-* hitting enter does button on get-ID
+* todo's?
 * parameterize things
 * make times long again
 * test full-screen
+* css

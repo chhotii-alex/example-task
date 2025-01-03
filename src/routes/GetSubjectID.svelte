@@ -1,5 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
+	import { onEnter } from './util.js';
 	export let state;
 
 	let buttonResolution = null;
@@ -24,11 +25,6 @@
 		complaint = '';
 		return true;
 	}
-	function onEnter(key, action) {
-		if (key === 'Enter') {
-			action();
-		}
-	}
 	function buttonClick() {
 		if (isNameOk(state.subjectID)) {
 			buttonResolution();
@@ -36,24 +32,32 @@
 	}
 </script>
 
-<label for="responseText"> Subject ID: </label>
-<input
-	type="text"
-	bind:value={state.subjectID}
-	name="responseText"
-	id="responseText"
-	onkeyup={(e) => onEnter(e.key, buttonClick)}
-/>
-<br />
-<div class="below">
-	{#if isNameOk(state.subjectID)}
-		<button onclick={buttonClick}> Click here when ready to begin! </button>
-	{/if}
-	{complaint}
-	{state.complaint}
+<div class="container">
+	<label for="responseText"> Subject ID: </label>
+	<input
+		type="text"
+		bind:value={state.subjectID}
+		name="responseText"
+		id="responseText"
+		onkeyup={(e) => onEnter(e.key, buttonClick)}
+		autocomplete="off"
+	/>
+	<br />
+	<div class="below">
+		{#if isNameOk(state.subjectID)}
+			<button onclick={buttonClick}> Click here when ready to begin! </button>
+		{/if}
+		{complaint}
+		{state.complaint}
+	</div>
 </div>
 
 <style>
+	.container {
+		position: relative;
+		left: 50%;
+		transform: translate(-25%, 0px);
+	}
 	.below {
 		margin: 10px;
 		padding: 4px;
@@ -68,8 +72,7 @@
 	}
 	button {
 		padding: 4px 12px;
-		margin: 2px auto;
+		margin: auto;
 		border-radius: 10px;
-		display: block;
 	}
 </style>

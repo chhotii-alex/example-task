@@ -26,4 +26,10 @@ function shuffle(a) {
 	return a;
 }
 
-export { makeTimePromise, makeEternalPromise, shuffle };
+function onEnter(key, action) {
+	if (key === 'Enter') {
+		action();
+	}
+}
+
+export { makeTimePromise, makeEternalPromise, shuffle, onEnter };

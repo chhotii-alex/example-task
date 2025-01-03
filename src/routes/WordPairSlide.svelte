@@ -10,21 +10,29 @@
 	});
 </script>
 
-<div>
-	{state.words[0]}
-</div>
+<div class="contdainer">
+	<div class="word">
+		{state.words[0]}
+	</div>
 
-<div>+</div>
+	<div class="word">+</div>
 
-<div>
-	{state.words[1]}
+	<div class="word">
+		{state.words[1]}
+	</div>
 </div>
 
 <style>
-	div {
+	div.word {
 		width: 100%;
 		margin: auto;
 		text-align: center;
 		font-size: 80px;
+	}
+	.container {
+		position: relative;
+		left: 50%;
+		transform: translate(-25%, 0px);
+		border-style: solid;
 	}
 </style>

@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
-	import { makeTimePromise } from './util.js';
+	import { makeTimePromise, onEnter } from './util.js';
 	export let state;
 
 	let buttonResolution = null;
@@ -14,6 +14,10 @@
 		state.promise = Promise.race([timePromise, buttonPromise]);
 		state.endTrialHow = 'timeout';
 		startTime = new Date();
+		let field = document.getElementById('responseText');
+		if (field) {
+			field.focus();
+		}
 	});
 
 	function buttonClick() {
@@ -27,14 +31,18 @@
 </script>
 
 <div>
-	{state.words[0]}
+	<p>{state.words[0]}</p>
+	<br />
+	<input
+		type="text"
+		bind:value={state.response}
+		id="responseText"
+		onkeyup={(e) => onEnter(e.key, buttonClick)}
+		autocomplete="off"
+	/>
+	<br />
+	<button onclick={buttonClick}> Next </button>
 </div>
-
-<div>
-	<input type="text" bind:value={state.response} />
-</div>
-
-<button onclick={buttonClick}> Next </button>
 
 <style>
 	div {
@@ -42,5 +50,18 @@
 		margin: auto;
 		text-align: center;
 		font-size: 40px;
+	}
+	p {
+		font-size: 40px;
+		margin-top: 10px;
+		margin-botom: 6px;
+		margin-block-end: 6px;
+	}
+	input {
+		font-size: 40px;
+	}
+	button {
+		font-size: 30px;
+		margin: 46px;
 	}
 </style>
