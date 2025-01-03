@@ -1,0 +1,4 @@
+* hitting enter does button on get-ID
+* parameterize things
+* make times long again
+* test full-screen
