@@ -42,7 +42,7 @@ low-level event loop and responses to those events.
 
 # How to get this running
 
-- Install and run the Spring Boot [Prospective Randomizer)[https://github.com/chhotii-alex/prospective-randomizer?tab=readme-ov-file#compiling-and-running] somewhere.
+- Install and run the Spring Boot [Prospective Randomizer](https://github.com/chhotii-alex/prospective-randomizer?tab=readme-ov-file#compiling-and-running) somewhere.
 - Install `npm` on your computer.
 - `git clone` this repo.
 - `cd` into this repo's root directory on your computer
