@@ -6,7 +6,7 @@
 	let startTime = null;
 
 	onMount(() => {
-		state.promise = makeTimePromise(1); // TODO: realistically should be long
+		state.promise = makeTimePromise(8);
 	});
 </script>
 

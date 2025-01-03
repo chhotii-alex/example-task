@@ -1,5 +1,0 @@
-* todo's?
-* parameterize things
-* make times long again
-* test full-screen
-* css

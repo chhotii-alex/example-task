@@ -7,7 +7,7 @@
 	let startTime = null;
 
 	onMount(() => {
-		let timePromise = makeTimePromise(60); // TODO: realistically should be long
+		let timePromise = makeTimePromise(60);
 		let buttonPromise = new Promise((resolve, reject) => {
 			buttonResolution = resolve;
 		});

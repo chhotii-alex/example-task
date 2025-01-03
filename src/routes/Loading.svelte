@@ -3,7 +3,7 @@
 	import { onMount } from 'svelte';
 	export let state;
 
-	onMount(() => (state.promise = makeTimePromise(7)));
+	onMount(() => (state.promise = makeTimePromise(4)));
 </script>
 
 <div>

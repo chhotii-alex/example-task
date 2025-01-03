@@ -38,7 +38,7 @@ happens to _resolve_ a _Promise_. That _something_ can be the timeout of a timer
 (or rejected) to gate the app's progress through the series of steps outlined in `runTask()`. Thus, the `runTask()` function is "in charge"-- it's the function that
 you would look to here to see the overall top-level logic of the program-- but really everything is being called from the event loop. Note that this is
 _concurrancy, not multi-threading_, even though there's rather these two parallel tracks in the app: the `runTask()` logic running the top-level state, and the
-low-level event loop and responses to those events. 
+low-level event loop and responses to those events.
 
 # How to get this running
 
@@ -51,6 +51,7 @@ low-level event loop and responses to those events.
 - `npm run preview` and enter the Network URL in a browser on a device on the local network to test the task.
 
 # Deployment
+
 - After running `npm run build` there will be a directory named `build`. Copy that to the server.
 - Install `npm` on your computer.
 - Install `pm2` ( `npm install pm2 -g` )
@@ -58,3 +59,9 @@ low-level event loop and responses to those events.
 - invoke `pm2 stop 0` to stop serving task
 
 If any of this doesn't work as advertised, please open an Issue and vent me all the details, thanks!
+
+# Misc. Notes
+
+* This uses the full-screen API to take over the user's screen. If you don't want that, it's controlled by a boolean.
+* Safari has its own special security protections. A full-screen web app has only limited ability to get keyboard events. Do not use Safari if you want full-screen!
+* Yes, this is a web app in a browser, implying that you can have subjects run from their own computer anywhere in the world. Think carefully before having your subjects do your protocol outside your supervision, on equipment you don't control, though. Subjects may do surprising and unexpected things, such as not paying attention, wandering off during a task, taking notes on things that you're trying to test their brains' memory for, etc. As far as equipment goes, you will need to carefully vet your app for how it works on all broswers, all device types, and all screen sizes. Highly recommended that even though all subjects have devices these days, you have them come into your lab and use computers you control, to get valid and reliable results.
