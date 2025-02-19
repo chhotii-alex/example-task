@@ -4,7 +4,8 @@ class Randomizer {
 		this.protocolName = 'my_study';
 		this.protocol = {
 			groupNames: ['interference', 'distraction'],
-			variableSpec: { score: null },
+		    variableSpec: [{ name:'score',
+				     type:'continuous'}],
 			allowRevision: true,
 			algorithm: 'Balanced'
 		};
